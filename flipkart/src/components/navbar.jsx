@@ -1,6 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,10 +17,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4">
       <div className="container-fluid ">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
             <img className="mainLogo mx-4" src="/mainlogo.png" />
           
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -58,12 +59,12 @@ const Navbar = () => {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
-                    Action
+                    ItemX
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Another action
+                    ItemY
                   </a>
                 </li>
                 <li>
@@ -92,12 +93,12 @@ const Navbar = () => {
             
             
             <li className="nav-item d-flex align-items-center ">
+            <Link to="/cart">
             <ShoppingCartIcon style={{color:"white"}}  /><sup ><span className='bg-danger text-light fw-bold rounded px-1'>{products.length}</span></sup>
+            </Link>
                 
 
-              <a className="nav-link active" aria-current="page" href="/cart">
-                Cart
-              </a>
+              
             </li>
             
           </ul>
